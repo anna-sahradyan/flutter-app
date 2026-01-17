@@ -12,7 +12,7 @@ class FavoritesScreen extends StatefulWidget {
 }
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
-  String _sort = 'Имя';
+  String _sort = 'Name';
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
     if (provider.favorites.isEmpty) {
       return const Center(
         child: Text(
-          'Нет избранных персонажей',
+          'No favorite characters',
           style: TextStyle(fontSize: 18, color: Colors.grey),
         ),
       );
@@ -34,13 +34,13 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
           child: DropdownButton<String>(
             value: _sort,
             items: const [
-              DropdownMenuItem(value: 'Имя', child: Text('По имени')),
-              DropdownMenuItem(value: 'Статус', child: Text('По статусу')),
+              DropdownMenuItem(value: 'Name', child: Text('By Name')),
+              DropdownMenuItem(value: 'Status', child: Text('By Status')),
             ],
             onChanged: (value) {
               if (value == null) return;
               setState(() => _sort = value);
-              value == 'Имя'
+              value == 'Name'
                   ? provider.sortFavoritesByName()
                   : provider.sortFavoritesByStatus();
             },

@@ -20,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_index == 0 ? 'Персонажи' : 'Избранное'),
+        title: Text(_index == 0 ? 'Characters' : 'Favorites'),
         actions: [
           IconButton(
             icon: const Icon(Icons.brightness_6),
@@ -33,8 +33,8 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _index,
         onTap: (i) => setState(() => _index = i),
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Персонажи'),
-          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Избранное'),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Characters'),
+          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favorites'),
         ],
       ),
     );
